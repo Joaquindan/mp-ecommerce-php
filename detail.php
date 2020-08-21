@@ -113,25 +113,31 @@
                                     </div>
 
                                 </div>
-                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
-                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
-                                        <div class="as-producttile-title">
-                                            <h3 class="as-producttile-name">
-                                                <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
-                                                </p>
+                                <form action="envio.php" method="post" target="_blank">
+                                    <div class="as-producttile-info" style="float:left;min-height: 168px;">
+                                        <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                                            <div class="as-producttile-title">
+                                                <h3 class="as-producttile-name">
+                                                    <p class="as-producttile-tilelink">
+                                                        <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
+                                                    </p>
 
+                                                </h3>
+                                            </div>
+                                            <h3 >
+                                                <?php echo $_POST['price'] ?>
+                                            </h3>
+                                            <h3 >
+                                                <?php echo "$" . $_POST['unit'] ?>
                                             </h3>
                                         </div>
-                                        <h3 >
-                                            <?php echo $_POST['price'] ?>
-                                        </h3>
-                                        <h3 >
-                                            <?php echo "$" . $_POST['unit'] ?>
-                                        </h3>
+                                        <input type="hidden" name="title" value="<?php echo $_POST['title']; ?>">
+                                        <input type="hidden" name="price" value="<?php echo $_POST['price']; ?>">
+                                        <input type="hidden" name="unit" value="<?php echo $_POST['unit']; ?>">
+                                        <input type="hidden" name="img" value="<?php echo $_POST['img']; ?>">
+                                        <button type="submit" class="mercadopago-button" formmethod="post" value="enviar" name="enviar">Pagar</button>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
